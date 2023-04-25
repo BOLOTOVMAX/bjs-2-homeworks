@@ -12,11 +12,4 @@ function getUsersNamesInAgeRange(users, gender) {
     return users.filter(user => gender === user.gender)
     .map(user => user.age)
     .reduce((summator,age,index,userAges) => summator + age/userAges.length, 0)
-    //{
-       // acc += item;
-      //  if(index === arr.length -1){
-      //    return acc/arr.length;
-       // }
-      //  return acc;
-     // },0)
 }

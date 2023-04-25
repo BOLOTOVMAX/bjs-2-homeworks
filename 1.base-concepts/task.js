@@ -5,7 +5,8 @@ function solveEquation(a, b, c) {
   if(discriminant < 0){
     let discriminant  = arr;
   }else if(discriminant === 0){
-     let arr = [-b/(2*a)]
+     let sum = -b/(2*a)
+     arr.push(sum)
   }else if(discriminant > 0){
     let root = [];
       root.push((-b + Math.sqrt(discriminant) )/(2*a));
@@ -16,13 +17,13 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if(Number.isNaN(calculateTotalMortgage)){
-    let percent1 = percent/12;
+  
+  let percent1 = percent/100/12;
   let sum = amount - contribution;
   let paymentPerMonth = sum * (percent1 + (percent1 / (((1 + percent1)**countMonths) - 1)));
   let totalAmount = paymentPerMonth  * countMonths;
   let b = Number(totalAmount.toFixed(2));
   
   return b
-  }
+  
 }

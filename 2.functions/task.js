@@ -13,7 +13,7 @@ function getArrayParams(...arr) {
 function summElementsWorker(...arr) {
   let sum = arr.reduce(function(result, current) {
     return result + current
-  }, );
+  }, 0);
 }
 
 function differenceMaxMinWorker(...arr) {
