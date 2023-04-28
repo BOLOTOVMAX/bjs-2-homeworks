@@ -3,7 +3,7 @@ function getArrayParams(...arr) {
   let max = Math.max(...arr)
   let sum = arr.reduce(function(result, current) {
     return result + current
-  }, );
+  }, 0);
   let  avg = sum/arr.length;
    avg = avg.toFixed(2)
    avg = Number(avg);
@@ -11,7 +11,7 @@ function getArrayParams(...arr) {
 }
 
 function summElementsWorker(...arr) {
-  let sum = arr.reduce(function(result, current) {
+  return arr.reduce((result, current) => {
     return result + current
   }, 0);
 }
@@ -20,6 +20,11 @@ function differenceMaxMinWorker(...arr) {
   let min = Math.min(...arr);
   let max = Math.max(...arr);
   let differenceMaxMin = max - min;
+  arr = differenceMaxMin 
+  if (arr.length === 0) {
+return 0;
+}
+ return arr 
 }
 
 function differenceEvenOddWorker(...arr) {
@@ -32,7 +37,7 @@ function differenceEvenOddWorker(...arr) {
    sumOddElement = arr[i] + sumOddElement;
  };
   }
-  let element = sumEvenElement - sumOddElement;
+  return sumEvenElement - sumOddElement;
 }
 
 function averageEvenElementsWorker(...arr) {
@@ -44,12 +49,13 @@ function averageEvenElementsWorker(...arr) {
        countEvenElement = countEvenElement + 1;
      };
    };
+   return sumEvenElement/countEvenElement
 }
 
 function makeWork (arrOfArr, func) {
   let maxWorkerResult = -Infinity;
-  for (let i = 0; i < arr.length;i++){
-   let sumMax = getArrayParams(...arr[i]);
+  for (let i = 0; i < arrOfArr.length;i++){
+   let sumMax = averageEvenElementsWorker(...arrOfArr[i]);
     if(sumMax > maxWorkerResult){
       maxWorkerResult = sumMax ;
     };
