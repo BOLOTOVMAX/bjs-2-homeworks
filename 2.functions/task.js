@@ -11,9 +11,13 @@ function getArrayParams(...arr) {
 }
 
 function summElementsWorker(...arr) {
+  
   return arr.reduce((result, current) => {
     return result + current
   }, 0);
+ // if(isNaN(arr)){
+ //   return 0
+ // }
 }
 
 function differenceMaxMinWorker(...arr) {
@@ -21,13 +25,16 @@ function differenceMaxMinWorker(...arr) {
   let max = Math.max(...arr);
   let differenceMaxMin = max - min;
   arr = differenceMaxMin 
-  if (arr.length === 0) {
-return 0;
-}
+  //if(isNaN(arr)){
+ //   return 0
+  //}
  return arr 
 }
 
 function differenceEvenOddWorker(...arr) {
+  if(isNaN(...arr)){
+      return 0
+    }
   let sumEvenElement = 0;
   let sumOddElement = 0;
   for (let i = 0; i < arr.length;i++){
@@ -52,10 +59,11 @@ function averageEvenElementsWorker(...arr) {
    return sumEvenElement/countEvenElement
 }
 
+
 function makeWork (arrOfArr, func) {
   let maxWorkerResult = -Infinity;
   for (let i = 0; i < arrOfArr.length;i++){
-   let sumMax = averageEvenElementsWorker(...arrOfArr[i]);
+   let sumMax = func(...arrOfArr[i]);
     if(sumMax > maxWorkerResult){
       maxWorkerResult = sumMax ;
     };
