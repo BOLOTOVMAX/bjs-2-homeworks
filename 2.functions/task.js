@@ -11,7 +11,6 @@ function getArrayParams(...arr) {
 }
 
 function summElementsWorker(...arr) {
-  
   return arr.reduce((result, current) => {
     return result + current
   }, 0);
@@ -21,6 +20,9 @@ function summElementsWorker(...arr) {
 }
 
 function differenceMaxMinWorker(...arr) {
+  if(isNaN(...arr)){
+    return 0
+  }
   let min = Math.min(...arr);
   let max = Math.max(...arr);
   let differenceMaxMin = max - min;
@@ -48,6 +50,9 @@ function differenceEvenOddWorker(...arr) {
 }
 
 function averageEvenElementsWorker(...arr) {
+  if(isNaN(...arr)){
+    return 0
+  }
   let sumEvenElement = 0;
   let countEvenElement = 0;
   for (let i = 0; i < arr.length;i++){
