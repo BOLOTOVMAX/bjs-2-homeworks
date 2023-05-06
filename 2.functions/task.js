@@ -14,9 +14,6 @@ function summElementsWorker(...arr) {
   return arr.reduce((result, current) => {
     return result + current
   }, 0);
- // if(isNaN(arr)){
- //   return 0
- // }
 }
 
 function differenceMaxMinWorker(...arr) {
@@ -27,9 +24,6 @@ function differenceMaxMinWorker(...arr) {
   let max = Math.max(...arr);
   let differenceMaxMin = max - min;
   arr = differenceMaxMin 
-  //if(isNaN(arr)){
- //   return 0
-  //}
  return arr 
 }
 
