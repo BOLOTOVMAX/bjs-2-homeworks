@@ -21,29 +21,31 @@
    this.b = b;
    this.c = c
    if(a > b + c || b > a + c || c > a + b){
-    throw new Error ("Tреугольник с такими сторонами не существует");
+    throw new Error ('Треугольник с такими сторонами не существует');
      }
     }
 
-   get Perimeter (){
-       return (this._a + this._b + this._c);
+   get perimeter (){
+       return (this.a + this.b + this.c)
    }
 
     
-   getarea (){
-       const p = this.getPerimeter()/ 2;   
-       return Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
+   get area (){
+       const p = (this.a + this.b + this.c)/2;
+       return Number(Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c)).toFixed(3))
+       //const p = this.getPerimeter()/ 2;   
+       //return Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
    }
 
-   getTriangle(){
-    try
-    {
+ }
+
+  function getTriangle (a, b, c){
+    try{
         return new Triangle(a, b, c);
     } catch (error){
         return {
-            getArea: function () { return "Ошибка! Треугольник не существует" },
-            getPerimeter: function () { return "Ошибка! Треугольник не существует" }
+             get area () { return "Ошибка! Треугольник не существует" },
+            get perimeter () { return "Ошибка! Треугольник не существует" }
         }
     }
    }
- }
