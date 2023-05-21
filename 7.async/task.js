@@ -5,8 +5,6 @@ class AlarmClock{
     }
 
     addClock(time, callback){
-        this.time =  `HH:MM`;
-        //const timerRun = callback();
         if(!time|| !callback){
             throw new Error('Отсутствуют обязательные аргументы')
     }
@@ -17,9 +15,9 @@ class AlarmClock{
     }
 
     removeClock(time){
-
-        this.alarmCollection.filter(alarm => alarm.time === time)
-      //time.filter((time) => { return this.time !== this.time})
+        this.alarmCollection = this.alarmCollection.filter(alarm => alarm.time !== time);
+        //this.alarmCollection.filter(alarm => alarm.time === time)
+      
    }
 
    getCurrentFormattedTime(){
